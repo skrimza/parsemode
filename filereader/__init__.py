@@ -1,6 +1,7 @@
-from .reader import FrameJson
+from .reader import FrameJson, WorkFrame
 
 
 __all__ = [
     'FrameJson',
+    'WorkFrame'
 ]

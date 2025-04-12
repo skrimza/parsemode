@@ -15,10 +15,9 @@ class FrameJson(WorkFrame):
     def from_excel(self, json_path="article.json"):
         try:
             with open(file=json_path, mode="w", encoding="utf-8") as json_file:
-                data = self.frame.head(n=101).to_dict()
+                data = self.frame.to_dict()
                 for articles in data.values():
                     new_dict = {"articles": list(articles.values())}
-                    print(new_dict)
                     dump(
                         obj=new_dict,
                         fp=json_file,
@@ -36,3 +35,4 @@ class FrameJson(WorkFrame):
             return data
         except Exception as e:
             raise
+
